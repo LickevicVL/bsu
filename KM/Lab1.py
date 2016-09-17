@@ -4,16 +4,14 @@ import re
 from numpy import array
 
 """1"""
-# holmes_url = "http://www.gutenberg.org/cache/epub/1661/pg1661.txt"
-# response = get(holmes_url)
-# text = response.text.replace('\r', '').replace('\n', '')
-text = ''
-with open('Lab1.txt') as file:
-    for line in file:
-        text += line
+holmes_url = "http://www.gutenberg.org/cache/epub/1661/pg1661.txt"
+response = get(holmes_url)
+text = response.text
+# text = ''
+# with open('Lab1.txt') as file:
+#     for line in file:
+#         text += line
 
-# text = text.replace('\r\n', '').replace('\n', '')
-# print(text)
 
 """2"""
 text_lowercase = text.lower()
@@ -37,14 +35,16 @@ words = list(set(words))
 print(len(words))
 
 """5"""
-reg = re.compile('[A-Z0-9\"][A-Za-z 0-9\'\",:;\-]+')
-
-text = text.replace('\n', '').replace('\r', '')
-
+reg = re.compile('[A-Za-z0-9 \'"@#,:;\(\)\*-]{2,}(?=[\.!?" ]+[0-9A-Z"\'])')
+text = text.replace('\r', ' ').replace('\n', ' ').replace('\r\n', ' ').replace('\\', '').replace('Mr.', 'Mr')\
+    .replace('Mrs.', 'Mrs').replace('St.', 'St')
 sentences = reg.findall(text)
+
+
 print(len(sentences))
 def filt(sentence):
-    if len(sentence) <= 1:
+    if len(sentence) <= 1 or sentence in ['\r', '\n', '\r\n', '  ', "' ", "'  ", '"  ', '" ', '  1', ' 1', ' 4',
+                                          '"    ', '    ', "'   ", '    1', '    4', "'    "]:
         return False
     else:
         return True
@@ -53,17 +53,26 @@ sentences = list(filter(filt, sentences))
 
 print(len(sentences))
 
+
+
 """6"""
 def num(word, sentences):
-    return len([w for w in sentences.lower().split() if w == word])
+    return len([w for w in sentences.lower().split() if word in w])
 
-
-M = array([[num(word, sentence.lower()) for word in words] for sentence in sentences])
+M = array([[num(word, sentence) for word in words] for sentence in sentences])
 print(M.shape)
+
 
 """7"""
 sen = M[1994]
-for i in range(7368):
-    print(spatial.distance.cosine(sen, M[i]))
-# res = [spatial.distance.cosine(sen, sentence) for sentence in M]
-# min_res = res.argmin()
+print(sentences[1994])
+tmpM = list(M)
+tmpM.pop(1994)
+tmpM = array(tmpM)
+
+res = array([spatial.distance.cosine(sen, sentence) for sentence in tmpM])
+min_res = res.argmin()
+min_sen = min_res + 1 if min_res >= 1994 else min_res
+print(min_res)
+print(res[min_res])
+print(sentences[min_sen])
