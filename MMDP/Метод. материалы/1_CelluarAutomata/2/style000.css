@@ -1,0 +1,192 @@
+/* база */
+body { 
+ font-family : verdana,arial,helvetica; 
+ font-size: 13px;
+ background-color: white;
+ color: black;
+}
+a:hover {TEXT-DECORATION: underline}
+.body { font-family : verdana,arial,helvetica; font-size: 13px; }
+
+
+.m1 { font-size: 11px; } /* вместо font size=-1 */
+.m2 { font-size: 10px; } /* вместо font size=-2 */
+.m4 { font-size: 8px; } /* вместо font size=-4 */
+
+/* база для старого Netscape */
+td   { font-family : verdana,arial,helvetica; font-size: 13px; }
+p    { font-family : verdana,arial,helvetica; font-size: 13px; } 
+span { font-family : verdana,arial,helvetica; }
+a    { font-family : verdana,arial,helvetica; }
+
+/* верхняя полоска навигации */
+.topnav { 
+ font-size: 10px; font-weight: bold; 
+ text-align: center;
+ background-color:#A40000; 
+ color:white; 
+}
+.topnav A { 
+ text-decoration: none;
+ color:white; 
+}
+
+
+/* термометр большой */
+.termlink { font-size: 10px; font-weight: bold; color: #A40000; }
+.termlink A:hover { 
+ color: #FF0000;
+}
+
+/* термометр малый */
+.sterm { font-size: 10px; color: #003366;}
+A.sterm:hover {COLOR: #0066BB;}
+
+/* Профили */
+.proflink { font-size: 10px; font-weight: bold; color: black; }
+A.proflink { text-decoration: none; }
+A.proflink:hover { text-decoration: none; }
+.aproflink { font-size: 10px; font-weight: bold; color: #A40000; }
+A.aproflink { text-decoration: none; }
+A.aproflink:hover { text-decoration: none; }
+
+/* новый профиль */
+a.prof, a.prof:visited, a.prof:active {
+ color: white;
+ font-size:10px;
+ font-weight: bold;
+ text-decoration:none;
+}
+a.prof:hover { text-decoration:underline; }
+
+/* рамочки */
+.box1 { background-color: #A40000} 
+.box2 { 
+        align:center;
+        width:100%;
+        border:0; 
+        background-color:#0078C0;
+      } 
+.boxline { background-color: #E4E4E4}
+.boxtitle { font-size: 12px; font-weight: bold; color: white; }
+A.boxtitle{ TEXT-DECORATION: none }
+A.boxtitle:hover{ TEXT-DECORATION: underline }
+.boxtext { font-size: 11px; }
+p.boxtext { font-size: 11px; }
+.boxlink { font-size: 11px; color: #003366; TEXT-DECORATION: none}
+.boxlink A { text-decoration: none }
+.boxboldlink { 
+ font-size: 11px; color: #003366; font-weight: bold; TEXT-DECORATION: none
+}
+.boxredlink { font-size: 11px; color: #A40000; TEXT-DECORATION: none}
+.boxredhead { 
+ font-size: 11px; color: #A40000; font-weight: bold; TEXT-DECORATION: none
+}
+
+/*копирайт внизу страницы*/
+.copy { FONT-SIZE: 10px; FONT-WEIGHT: normal; }
+
+/* имя автора */
+address { font-style: italic; }
+.author { font-style: italic; }
+
+/* специальное предложение */
+.special {
+ color: #a40000;
+ font-size:12px;
+ font-weight: bold;
+}
+
+
+/* элементы форм */	
+select {font-family: verdana, tahoma, arial, helvetica, sans-serif;
+ font-size: 11px; color: black
+} 
+input {font-family: verdana, tahoma, arial, helvetica, sans-serif;
+ font-size: 11px; color: black
+} 
+textarea {font-family: verdana, tahoma, arial, helvetica, sans-serif;
+ font-size: 11px; color: black
+}
+.inputs { 
+ font-family : verdana,arial,helvetica; 
+ font-size: 11px; 
+}
+.inputt { 
+ font-family : verdana,arial,helvetica; 
+ font-size: 11px;
+ width: 120px;
+}
+
+/**** ЗАГОЛОВКИ *****/
+
+/* очень маленький заголовк */
+.vshead {font-size: 10px; font-weight: bold} 
+/* маленький заголовк */
+.shead {font-size: 11px; font-weight: bold} 
+/* большой красный заголовок */
+.bredhead { font-size: 14px; font-weight: bold; color: #a40000; text-decoration: none; }
+/* Заголовок статьи на ее странице */
+.article { font-size: 17px; font-weight: bold; }
+
+
+
+
+
+/**** ССЫЛКИ *****/
+
+/* Линк типа далее */
+.morelink {font-size: 11px;TEXT-DECORATION: none}
+.morelink A {font-size: 11px;TEXT-DECORATION: none}
+/* Линк мнений */
+.opinlink { font-size: 11px; color: #003366; text-decoration: none; }
+/* ссылка - заголовок статьи 'title' и т.п. */
+.link { font-weight: bold; color: #003366; text-decoration: none; }
+/* тоже - только красная */
+.linkr { font-weight: bold; color: #A40000;  text-decoration: none; }
+/* тоже - но с фиксированным размером */
+.link12 { font-size: 12px; font-weight: bold; color: #003366; text-decoration: none; }
+/* Линк - полный номер журнала */
+.numlink {font-size: 11px;TEXT-DECORATION: none}
+/* новое меню */
+.hd {
+ color: black;
+ text-decoration:none;
+ font-size:10px;
+ font-weight: bold;	
+}
+a.hd:hover { text-decoration:underline; }
+.hdred {
+ color: #a40000;
+ text-decoration:none;
+ font-size:10px;
+ font-weight: bold;	
+}
+a.hdred:hover { text-decoration:underline; }
+a.hov_ul {TEXT-DECORATION: none}
+a.hov_ul:hover { text-decoration:underline; }
+
+/* названия рубрик верхнего уровня на главной станице */
+.fdir1 { font-size: 14px; font-weight: bold; text-decoration: none;}
+/* названия рубрик второго уровня на главной станице */
+.fdir2 { font-size: 11px; text-decoration: none;}
+/* названия рубрик верхнего уровня */
+.dir1 { font-size: 12px; font-weight: bold; text-decoration: none;}
+/* названия рубрик второго уровня */
+.dir2 { font-size: 11px;TEXT-DECORATION: none}
+
+UL { list-style: square outside;}
+.sq { list-style: square outside;}
+
+.wide { font-size: 11px; width: 100% }
+
+
+/* старые, возможно уже не используемые стили */
+
+.chapter { font-size: 12px; font-weight: bold; color: #A40000 }
+A.chapter { text-decoration: none; }
+.textsm { font-size: 11px; text-decoration: none; }
+
+/* точно нет в .htx */
+.linksm { font-size: 11px; color: #003366; text-decoration: none; }
+.menu { font-size: 12px; color: #003366; text-decoration: none; }
