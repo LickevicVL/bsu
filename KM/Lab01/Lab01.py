@@ -39,15 +39,18 @@ print('==================================')
 
 """5"""
 reg = re.compile('[A-Za-z0-9 \'"@#,:;\(\)\*-]{2,}(?=[\.!?" ]+[0-9A-Z"\'])')
-text = text.replace('\r', ' ').replace('\n', ' ').replace('\r\n', ' ').replace('\\', '').replace('Mr.', 'Mr')\
-    .replace('Mrs.', 'Mrs').replace('St.', 'St')
+text = text.replace('\r', ' ').replace('\n', ' ').replace('\r\n', ' ').\
+    replace('\\', '').replace('Mr.', 'Mr').\
+    replace('Mrs.', 'Mrs').replace('St.', 'St')
 sentences = reg.findall(text)
 
 
 print(len(sentences))
 def filt(sentence):
-    if len(sentence) <= 1 or sentence in ['\r', '\n', '\r\n', '  ', "' ", "'  ", '"  ', '" ', '  1', ' 1', ' 4',
-                                          '"    ', '    ', "'   ", '    1', '    4', "'    "]:
+    if len(sentence) <= 1 or sentence in ['\r', '\n', '\r\n', '  ', "' ",
+                                          "'  ", '"  ', '" ', '  1', ' 1',
+                                          ' 4', '"    ', '    ', "'   ",
+                                          '    1', '    4', "'    "]:
         return False
     else:
         return True
@@ -90,6 +93,8 @@ def simple_sentence(Matrix, number):
     return max_simp + 1 if max_simp >= number else max_simp
 
 m = int(str(time())[-3:])
+print(m)
+print(sentences[m])
 n = simple_sentence(M, m)
 print(n)
 print(sentences[n])
