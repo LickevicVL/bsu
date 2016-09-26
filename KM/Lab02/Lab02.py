@@ -7,7 +7,13 @@ def max_element(arr):
         m = arr.argmax()
         if m == 0 or arr[m - 1] != 0:
             if arr[m] == 0:
-                return arr[m + 1]
+                if 0 not in arr[m + 1:]:
+                    return arr[m + 1]
+                elif arr[m + 1] == 0:
+                    return 0
+                else:
+                    new_arr = arr[m + 1:]
+                    return max_element(new_arr)
             new_arr = np.hstack((arr[:m], arr[m + 1:]))
             return max_element(new_arr)
         else:
@@ -18,8 +24,8 @@ def max_element(arr):
         return None
 
 print(max_element(np.array([6, 2, 0, 3, 0, 0, 5, 7, 0])))
-print(max_element(np.array([0, 0, -10, -3])))
-print(max_element(np.array([10, 1, 0, -3, 0, 40, 0])))
+print(max_element(np.array([-15, 0, -10, 0, -3])))
+print(max_element(np.array([10, 1, 0, -3, 0, 1, 0])))
 print(max_element(np.array([0, 0, 0, 0])))
 print('=================================================')
 
