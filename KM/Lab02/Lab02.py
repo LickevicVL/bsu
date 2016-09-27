@@ -42,4 +42,45 @@ print(nearest_value(X, v))
 print('=================================================')
 
 """3"""
+def scale(X):
+    TX = X.transpose()
+    def sc(arr):
+        sample_mean = arr.sum() / len(arr)
+        n = len(arr) - 1
+        if n != 0:
+            standard_deviation = (sum((arr - sample_mean)**2) / n)**0.5
+            return (arr - sample_mean) / standard_deviation
+        else:
+            return 0
+    return np.array(list(map(sc, list(TX)))).transpose()
 
+
+X = np.random.randint(10, size=(3, 3))
+print(X)
+print(scale(X))
+print('=================================================')
+
+"""4"""
+def get_stats(X):
+    determinant = np.linalg.det(X)
+    trace = np.trace(X)
+    mn, mx = X.min(), X.max()
+    norm = np.linalg.norm(X)
+    eigenvalues = np.linalg.eigvals(X)
+    inv = np.linalg.inv(X)
+    return determinant, trace, (mn, mx), norm, eigenvalues, inv
+
+print(get_stats(X))
+print('=================================================')
+
+"""5"""
+l = list()
+for i in range(100):
+    M = np.random.normal(size=(10, 10))
+    N = np.random.normal(size=(10, 10))
+    MN = M.dot(N)
+    l.append(MN.max())
+al = np.array(l)
+average = sum(al) / len(al)
+quantile = np.percentile(al, 95)
+print(average, quantile)
